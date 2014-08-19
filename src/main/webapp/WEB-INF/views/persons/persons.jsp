@@ -12,13 +12,19 @@
 				<thead>
 					<tr>
 						<th  width="50px">Id</th>
-						<th width="150px">Name</th>
+						<th width="100px">Name</th>
+						<th width="100px">Sir Name</th>
+						<th width="100px">Birth Date</th>
+						<th width="100px">Phone</th>
 					</tr>
 				</thead>
 				<c:forEach var="p" items="${persons}">
 				<tr>
 		   			<td class="idColumn">${p.id}</td>
 		   			<td class="nameColumn">${p.name}</td>
+		   			<td class="idColumn">${p.sirName}</td>
+		   			<td class="nameColumn">${p.birthDate}</td>
+		   			<td class="idColumn">${p.phone}</td>
 	   			</tr>
 				</c:forEach>
 			</table>

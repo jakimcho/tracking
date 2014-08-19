@@ -1,5 +1,6 @@
 package com.jakim.tracking.entities;
 
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,8 +16,34 @@ public class Person {
 	@GeneratedValue
 	private int id;
 
-	@Column(name="name")
 	private String name;
+	private String sirName;
+	private Date birthDate;
+	private String phone;
+
+	public String getSirName() {
+		return sirName;
+	}
+
+	public void setSirName(String sirName) {
+		this.sirName = sirName;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 	public int getId() {
 		return id;
