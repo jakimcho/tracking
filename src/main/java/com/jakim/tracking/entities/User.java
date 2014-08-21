@@ -8,8 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-@Entity
+@Entity @Table(name = "user")
 public class User {
 
 	@Id
