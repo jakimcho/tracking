@@ -84,8 +84,8 @@ body {
 						<li class="active"><a href="${homeUrl}">Home</a></li>
 						<spring:url value="/persons/personForm" var="personFormtUrl" htmlEscape="true"/>
 						<li><a href="${personFormtUrl}">Add Person</a></li>	
-						<spring:url value="/persons/persons" var="personUrl" htmlEscape="true"/>
-						<li><a href="${personUrl}">Persons</a></li>			
+						<spring:url value="/users/users.html" var="usersUrl" htmlEscape="true"/>
+						<li><a href="${usersUrl}">Users</a></li>			
 						<spring:url value="/about" var="aboutUrl" htmlEscape="true"/>
 						<li><a href="${aboutUrl}">About</a></li>				
 					</ul>
