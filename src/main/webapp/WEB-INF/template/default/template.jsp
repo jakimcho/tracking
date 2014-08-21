@@ -46,17 +46,18 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="${current == 'index' ? 'active' : ''}"><a
-							href='<spring:url value="/" />'>Home</a></li>
-						<li class="${current == 'users' ? 'active' : ''}"><a
-							href="<spring:url value="/users/users.html" />">Users</a></li>
-						<li class="${current == 'register' ? 'active' : ''}"><a
-							href="<spring:url value="/register.html" />">Register</a></li>
-						<li class="${current == 'login' ? 'active' : ''}"><a
-							href="<spring:url value="/login.html" />">Login</a></li>
-						<li class="${current == 'account' ? 'active' : ''}"><a
-							href="<spring:url value="/account.html" />">My account</a></li>
-						<li><a href="<spring:url value="/logout" />">Logout</a></li>
+						<spring:url value="/" var="indexUrl" />
+						<spring:url value="/users/users.html" var="usersUrl" />
+						<spring:url value="/register.html" var="registerUrl" />
+						<spring:url value="/login.html" var="loginUrl" />
+						<spring:url value="/account.html" var="accountUrl" />
+						<spring:url value="/logout.html" var="logoutUrl" />
+						<li class="${current == 'index' ? 'active' : ''}"><a href="${indexUrl}">Home</a></li>
+						<li class="${current == 'users' ? 'active' : ''}"><a href="${usersUrl}">Users</a></li>
+						<li class="${current == 'register' ? 'active' : ''}"><a href="${registerUrl}">Register</a></li>
+						<li class="${current == 'login' ? 'active' : ''}"><a href="${loginUrl}">Login</a></li>
+						<li class="${current == 'account' ? 'active' : ''}"><a href="${accountUrl}">My account</a></li>
+						<li><a href="${logoutUrl}">Logout</a></li>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->

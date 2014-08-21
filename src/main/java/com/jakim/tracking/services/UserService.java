@@ -19,6 +19,11 @@ public class UserService {
 		return this.userRepository.findAll();
 	}
 
+	public User findOne(int userId) {
+		// TODO Auto-generated method stub
+		return this.userRepository.findOne(userId);
+	}
+
 	
 
 }

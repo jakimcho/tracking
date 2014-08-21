@@ -3,6 +3,7 @@ package com.jakim.tracking.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jakim.tracking.services.UserService;
@@ -21,5 +22,11 @@ public class UserController {
 		return "users/users";
 		
 	}
-
+	
+	@RequestMapping("/{id}")
+	public String detail(Model model, @PathVariable(value = "id") int userId){
+		model.addAttribute("user", this.userService.findOne(userId));
+		
+		return "users/user_detail";
+	}
 }
