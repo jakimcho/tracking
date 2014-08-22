@@ -12,7 +12,6 @@ import com.jakim.tracking.entities.User;
 import com.jakim.tracking.services.UserService;
 
 @Controller
-@RequestMapping("/users/")
 public class UserController {
 
 	@Autowired
@@ -23,14 +22,14 @@ public class UserController {
 		return new User();
 	}
 	
-	@RequestMapping("/users")
+	@RequestMapping("/users/users")
 	public String getAll(Model model){
 		model.addAttribute("users", this.userService.findAll());
 		
 		return "users/users";
 	}
 	
-	@RequestMapping("/{id}")
+	@RequestMapping("/users/{id}")
 	public String detail(Model model, @PathVariable(value = "id") int userId){
 		model.addAttribute("user", this.userService.findOneWithBlogs(userId));
 		
@@ -39,13 +38,13 @@ public class UserController {
 	
 	@RequestMapping("/register")
 	public String showRegister(Model model){
-		return "users/user-register";
+		return "user-register";
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String doRegister(@ModelAttribute("user")User user){
 		this.userService.save(user);
 		
-		return "users/user-register";
+		return "user-register";
 	}
 }

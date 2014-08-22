@@ -48,7 +48,7 @@
 					<ul class="nav navbar-nav">
 						<spring:url value="/" var="indexUrl" />
 						<spring:url value="/users/users.html" var="usersUrl" />
-						<spring:url value="/users/register.html" var="registerUrl" />
+						<spring:url value="/register.html" var="registerUrl" />
 						<spring:url value="/login.html" var="loginUrl" />
 						<spring:url value="/account.html" var="accountUrl" />
 						<spring:url value="/logout.html" var="logoutUrl" />

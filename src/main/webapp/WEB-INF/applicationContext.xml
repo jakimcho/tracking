@@ -47,6 +47,7 @@
 		<tx:annotation-driven transaction-manager="transactionManager" />
 
 		<jpa:repositories base-package="com.jakim.tracking.repository" />
+		<import resource="security.xml" />
 	</beans>
 
 </beans>
