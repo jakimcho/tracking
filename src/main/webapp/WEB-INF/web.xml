@@ -2,9 +2,6 @@
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-	<listener>
-		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-	</listener>
 
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
@@ -20,22 +17,8 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
-<!-- 	Easy way to solve Lazy Initi exception	 -->
-<!-- 	<filter> -->
-<!-- 	    <filter-name>oemInViewFilter</filter-name> -->
-<!-- 	    <filter-class>org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class> -->
-<!-- 	    <init-param> -->
-<!-- 	        <param-name>entityManagerFactoryBeanName</param-name> -->
-<!-- 	        <param-value>entityManagerFactory</param-value> -->
-<!-- 	    </init-param> -->
-<!-- 	</filter> -->
-<!-- 	<filter-mapping> -->
-<!-- 	    <filter-name>oemInViewFilter</filter-name> -->
-<!-- 	    <url-pattern>/*</url-pattern> -->
-<!-- 	</filter-mapping> -->
 </web-app>

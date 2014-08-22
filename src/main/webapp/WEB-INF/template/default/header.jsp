@@ -1,1 +1,1 @@
-<div class="header"><h1>I am the header of </h1></div>
+<div class="header">I am the header</div>
