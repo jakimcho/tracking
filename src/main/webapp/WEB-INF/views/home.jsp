@@ -1,4 +1,4 @@
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@include file="/WEB-INF/template/default/tagLib.jsp" %>
 
 <tiles:insertDefinition name="index">
 	<tiles:putAttribute name="body">
