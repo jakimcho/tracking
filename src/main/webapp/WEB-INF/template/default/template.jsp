@@ -6,6 +6,7 @@
 <head>
 
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
 
 <link rel="stylesheet"
 	href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -53,11 +54,18 @@
 						<spring:url value="/account.html" var="accountUrl" />
 						<spring:url value="/logout" var="logoutUrl" />
 						<li class="${current == 'index' ? 'active' : ''}"><a href="${indexUrl}">Home</a></li>
-						<li class="${current == 'users' ? 'active' : ''}"><a href="${usersUrl}">Users</a></li>
-						<li class="${current == 'register' ? 'active' : ''}"><a href="${registerUrl}">Register</a></li>
-						<li class="${current == 'login' ? 'active' : ''}"><a href="${loginUrl}">Login</a></li>
-						<li class="${current == 'account' ? 'active' : ''}"><a href="${accountUrl}">My account</a></li>
-						<li><a href="${logoutUrl}">Logout</a></li>
+						<security:authorize access="hasRole('ROLE_ADMIN')">
+							<li class="${current == 'users' ? 'active' : ''}"><a href="${usersUrl}">Users</a></li>
+						</security:authorize>
+						<security:authorize access="! isAuthenticated()">
+							<li class="${current == 'register' ? 'active' : ''}"><a href="${registerUrl}">Register</a></li>
+						</security:authorize>
+						<security:authorize access="! isAuthenticated()">
+							<li class="${current == 'login' ? 'active' : ''}"><a href="${loginUrl}">Login</a></li>
+						</security:authorize>
+						<security:authorize access="isAuthenticated()">
+							<li><a href="${logoutUrl}">Logout</a></li>
+						</security:authorize>
 					</ul>
 				</div>
 				<!--/.nav-collapse -->
