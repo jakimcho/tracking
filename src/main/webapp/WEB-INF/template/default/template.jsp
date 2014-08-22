@@ -51,7 +51,7 @@
 						<spring:url value="/register.html" var="registerUrl" />
 						<spring:url value="/login.html" var="loginUrl" />
 						<spring:url value="/account.html" var="accountUrl" />
-						<spring:url value="/logout.html" var="logoutUrl" />
+						<spring:url value="/logout" var="logoutUrl" />
 						<li class="${current == 'index' ? 'active' : ''}"><a href="${indexUrl}">Home</a></li>
 						<li class="${current == 'users' ? 'active' : ''}"><a href="${usersUrl}">Users</a></li>
 						<li class="${current == 'register' ? 'active' : ''}"><a href="${registerUrl}">Register</a></li>
