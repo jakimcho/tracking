@@ -5,6 +5,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.jakim.tracking.entities.Blog;
@@ -28,12 +30,10 @@ public class UserService {
 	private ItemRepository itemRepository;
 
 	public List<User> findAll() {
-		
 		return this.userRepository.findAll();
 	}
 
 	public User findOne(int userId) {
-		// TODO Auto-generated method stub
 		return this.userRepository.findOne(userId);
 	}
 
@@ -44,7 +44,7 @@ public class UserService {
 		List<Blog> blogs = this.blogRepository.findByUser(user);
 		
 		for (Blog blog : blogs){
-			List<Item> items = this.itemRepository.findByBlog(blog);
+			List<Item> items = this.itemRepository.findByBlog(blog, new PageRequest(0,  10, Direction.DESC, "publishDate"));
 			blog.setItems(items);
 		}
 		
@@ -52,6 +52,7 @@ public class UserService {
 		return user;
 	}
 
-	
-
+	public void save(User user) {
+		this.userRepository.save(user);
+	}
 }

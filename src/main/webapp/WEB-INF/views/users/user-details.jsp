@@ -2,6 +2,7 @@
 
 <tiles:insertDefinition name="user-detail">
 	<tiles:putAttribute name="body">
+	
 		<h1>${user.name}</h1>
 		<c:forEach items="${user.blogs}" var="blog">
 			<h3>Blog name: ${blog.name}</h3>
